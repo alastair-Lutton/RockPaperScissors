@@ -1,0 +1,4 @@
+C:\Users\alast\source\repos\RockPaperScissors\Game - RockPaperScissors\obj\Debug\RockPaperScissors.csprojAssemblyReference.cache
+C:\Users\alast\source\repos\RockPaperScissors\Game - RockPaperScissors\obj\Debug\RockPaperScissors.csproj.CoreCompileInputs.cache
+C:\Users\alast\source\repos\RockPaperScissors\Game - RockPaperScissors\obj\Debug\Game - RockPaperScissors.dll
+C:\Users\alast\source\repos\RockPaperScissors\Game - RockPaperScissors\obj\Debug\Game - RockPaperScissors.pdb

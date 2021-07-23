@@ -1,0 +1,50 @@
+﻿@using Game___RockPaperScissors.Models;
+@model RockPaperScissors
+<script src="rps-script.js"></script>
+
+<div class="content">
+    <h1>Rock, paper, scissors!</h1>
+    @using (Html.BeginForm("Index", "Home", new { id = "gameForm" }, FormMethod.Post))
+    {
+        Html.HiddenFor(m => m.ComputerVsComputer);
+        <div>
+            <label class="player-label">Player</label>
+            <label class="computer-label">Computer</label>
+        </div>
+
+        <div class="scores">
+            <span class="player-score" id="player-score">
+                @Html.HiddenFor(m => m.PlayerScore)
+                @Html.DisplayFor(m => m.PlayerScore)
+            </span>
+            <span class="computer-score" id="computer-two-score">
+                @Html.HiddenFor(m => m.ComputerScore)
+                @Html.DisplayFor(m => m.ComputerScore)
+            </span>
+        </div>
+
+        <div class="player-options">
+            <div class="option">
+                <input type="submit" name="playerChoice" value="Rock" />
+            </div>
+            <div class="option">
+                <input type="submit" name="playerChoice" value="Paper" />
+            </div>
+            <div class="option" id="scissors">
+                <input type="submit" name="playerChoice" value="Scissors" />
+            </div>
+        </div>
+
+        <div class="option" id="play-computer" hidden>
+            <input id="play-computer-vs" type="submit" value="Play" />
+        </div>
+        @Html.LabelFor(m => m.ComputerVsComputer);
+        @Html.CheckBoxFor(m => m.ComputerVsComputer, new { id = "computer-vs-check"});
+
+        <div class="result">
+            <div>@ViewBag.OnePlayed</div>
+            <div>@ViewBag.TwoPlayed</div>
+            <b>@Model.Result</b>
+        </div>
+    }
+</div>

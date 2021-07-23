@@ -1,0 +1,86 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+    margin-top: 55px;
+}
+
+.player-score, .player-label{
+    font-size:xx-large;
+}
+
+.computer-score, .computer-label{
+    text-align: right;
+    font-size: xx-large;
+    float: right;
+}
+
+input, button {
+    border: none;
+    padding: 0;
+    width: 100%;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    background: 0;
+}
+
+
+button {
+    margin-top: 30px;
+}
+
+input[type=checkbox] {
+    width: 5%;
+}
+
+button:hover, input:hover{
+    color: grey;
+}
+
+#play-computer {
+    background-color: palegoldenrod;
+}
+
+label {
+    font-size: larger;
+}
+
+.result {
+    margin-top: 5px;
+    text-align:center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.option {
+    background-color: lightgray;
+    margin-left: auto;
+    margin-bottom: 10px;
+    border-color: black;
+    margin-right: auto;
+    border-style: dotted;
+    border-radius: 75px;
+    height: 150px;
+    width: 150px;
+}
