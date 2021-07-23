@@ -16,27 +16,21 @@ namespace Game___RockPaperScissors.Controllers
         [HttpPost]
         public ActionResult Index(string playerChoice, RockPaperScissors model)
         {
-            if (playerChoice == null)
-            {
-                model.ComputerVsComputer = true;
-                return ComputerVsComputer(model);
-            }
-            model.ComputerVsComputer = false;
             Random random = new Random();
+            model.ComputerVsComputer = false;
+            GameChoice playerChoiceEnum;
+            if (String.IsNullOrEmpty(playerChoice))
+            {
+                playerChoiceEnum = GetComputerChoice(random);
+                model.ComputerVsComputer = true;
+            }
+            else
+            {
+                playerChoiceEnum = (GameChoice)Enum.Parse(typeof(GameChoice), playerChoice);
+            }
             var computerChoice = GetComputerChoice(random);
-            Enum.TryParse(playerChoice, out GameChoice playerChoiceEnum);
             model = PlayGame("Player", "Computer", playerChoiceEnum, computerChoice, model);
 
-            ModelState.Clear();
-            return View(model);
-        }
-
-        public ActionResult ComputerVsComputer(RockPaperScissors model)
-        {
-            Random random = new Random();
-            var computerOneChoice = GetComputerChoice(random);
-            var computerTwoChoice = GetComputerChoice(random);
-            model = PlayGame("Player", "Computer", computerOneChoice, computerTwoChoice, model);
             ModelState.Clear();
             return View(model);
         }
